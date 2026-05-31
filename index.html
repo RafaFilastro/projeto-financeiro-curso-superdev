@@ -9,42 +9,33 @@
     <header>
       <h1>TechFix</h1>
       <p>Sistema de Assistência Técnica</p>
-      <nav>
-        <a href="index.html" class="ativo">Dashboard</a>
-        <a href="orcamentos.html">Orçamentos</a>
-        <a href="vendas.html">Vendas</a>
-      </nav>
     </header>
-
     <main>
+      <section class="menu-principal">
+        <a href="orcamentos.html" class="botao-menu">Orçamentos</a>
+        <a href="vendas.html" class="botao-menu">Vendas</a>
+      </section>
       <section class="card">
-        <h2>Dashboard</h2>
         <div class="cards-grid">
-
           <div class="card-info azul">
             <h3>Orçamentos em Andamento</h3>
             <p id="orcamentosAndamento">Carregando...</p>
           </div>
-
           <div class="card-info verde">
             <h3>Orçamentos Finalizados</h3>
             <p id="orcamentosFinalizados">Carregando...</p>
           </div>
-
           <div class="card-info amarelo">
-            <h3>Total de Vendas</h3>
+            <h3>Vendas de produtos</h3>
             <p id="totalVendas">Carregando...</p>
           </div>
-
           <div class="card-info cinza">
-            <h3>Faturamento Geral</h3>
+            <h3>Serviços + Produtos</h3>
             <p id="faturamentoGeral">Carregando...</p>
           </div>
-
         </div>
       </section>
     </main>
-
     <script src="assets/js/dashboard.js"></script>
   </body>
 </html>

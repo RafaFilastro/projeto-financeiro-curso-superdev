@@ -10,17 +10,14 @@
       <h1>TechFix</h1>
       <p>Sistema de Assistência Técnica</p>
       <nav>
-        <a href="index.html">Dashboard</a>
+        <a href="index.html">Inicio</a>
         <a href="orcamentos.html">Orçamentos</a>
-        <a href="vendas.html" class="ativo">Vendas</a>
       </nav>
     </header>
-
     <main>
       <section class="card">
         <h2>Venda</h2>
         <form id="formVenda">
-
           <label>Produto</label>
           <select id="produto">
             <option value="">Selecione um produto...</option>
@@ -33,17 +30,13 @@
             <option>Monitor</option>
             <option>Placa de Rede</option>
           </select>
-
           <label>Quantidade</label>
           <input type="number" id="quantidade" min="1" required />
-
           <label>Valor Total (R$)</label>
           <input type="number" id="valorTotal" min="0" step="0.01" required />
-
           <button id="btnSalvar" type="submit">Salvar Venda</button>
         </form>
       </section>
-
       <section class="card">
         <h2>Vendas Cadastradas</h2>
         <table>
@@ -59,7 +52,6 @@
         </table>
       </section>
     </main>
-
     <script src="assets/js/vendas.js"></script>
   </body>
 </html>

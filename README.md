@@ -1,36 +1,64 @@
 # TechFix - Sistema de Assistência Técnica
 
-## Descrição do Projeto
+## Integrantes
+
+* Rafael Filastro
+* Guilherme
+
+---
+
+# Sobre o Projeto
 
 O TechFix é um sistema web desenvolvido para auxiliar no gerenciamento de uma assistência técnica de computadores.
 
-O objetivo do sistema é permitir o cadastro e controle de orçamentos de serviços realizados pela empresa, além do gerenciamento dos pagamentos efetuados pelos clientes.
+O sistema permite o cadastro, consulta, atualização e exclusão de orçamentos de serviços, além do gerenciamento de vendas realizadas pela empresa.
 
-O projeto foi dividido em módulos, permitindo que cada integrante da equipe desenvolvesse uma parte específica do sistema.
+O objetivo do projeto é aplicar os conhecimentos adquiridos durante a disciplina, utilizando HTML, CSS, JavaScript e integração com APIs REST.
 
 ---
 
 # Tecnologias Utilizadas
 
-* HTML
-* CSS
+* HTML5
+* CSS3
 * JavaScript
 * Fetch API
-* API REST
+* APIs REST
+* Manipulação do DOM
 
 ---
 
-# Integrante 1 - Módulo de Orçamentos
+# Funcionalidades do Sistema
 
-Responsável pelo desenvolvimento do módulo de orçamentos.
+## Dashboard
 
-## API Utilizada
+A tela inicial apresenta um painel com informações resumidas do sistema:
+
+* Quantidade de orçamentos em andamento
+* Quantidade de orçamentos finalizados
+* Total de vendas realizadas
+* Faturamento geral
+
+Também possui atalhos rápidos para os módulos:
+
+* Orçamentos
+* Vendas
+
+---
+
+# Integrante 1 - Rafael Filastro
+
+## Módulo de Orçamentos
+
+Responsável pelo desenvolvimento completo do módulo de orçamentos.
+
+### API Utilizada
 
 ```text
 https://api.franciscosensaulas.com/api/v1/trabalho/orcamentos-detalhados
 ```
 
-## Estrutura da API
+### Estrutura da API
 
 ```json
 [
@@ -45,18 +73,18 @@ https://api.franciscosensaulas.com/api/v1/trabalho/orcamentos-detalhados
 ]
 ```
 
-## Funcionalidades Desenvolvidas
+### Funcionalidades Implementadas
 
 * Cadastro de orçamento
 * Listagem de orçamentos
 * Edição de orçamento
 * Exclusão de orçamento
 * Atualização de status
-* Ordenação automática dos orçamentos
+* Ordenação automática dos registros
 * Destaque visual para orçamentos finalizados
-* Interface responsiva simples
+* Interface responsiva e organizada
 
-## Campos do Orçamento
+### Campos do Orçamento
 
 * Cliente
 * Descrição do serviço
@@ -64,81 +92,114 @@ https://api.franciscosensaulas.com/api/v1/trabalho/orcamentos-detalhados
 * Prazo em dias
 * Status
 
-## Status Disponíveis
+### Status Disponíveis
 
 * Em análise
 * Aguardando aprovação
 * Aprovado
 * Finalizado
 
+### Regras Implementadas
+
+* Os orçamentos mais recentes aparecem primeiro.
+* Orçamentos finalizados são movidos automaticamente para o final da lista.
+* Orçamentos finalizados recebem destaque visual com aparência riscada.
+
 ---
 
-# Integrante 2 - Módulo de Pagamentos
+# Integrante 2 - Guilherme
 
-Responsável pelo desenvolvimento do módulo de pagamentos.
+## Módulo de Vendas
 
-## API Utilizada
+Responsável pelo desenvolvimento do módulo de vendas.
+
+### API Utilizada
 
 ```text
-https://api.franciscosensaulas.com/api/v1/trabalho/pagamentos
+https://api.franciscosensaulas.com/api/v1/trabalho/vendas
 ```
 
-## Estrutura da API
+### Funcionalidades Implementadas
 
-```json
-[
-  {
-    "id": 0,
-    "metodoPagamento": "string",
-    "valor": 0,
-    "transacaoId": 0
-  }
-]
-```
+* Cadastro de vendas
+* Listagem de vendas
+* Edição de vendas
+* Exclusão de vendas
+* Controle de produtos vendidos
 
-## Funcionalidades Esperadas
+### Campos da Venda
 
-* Cadastro de pagamento
-* Listagem de pagamentos
-* Edição de pagamento
-* Exclusão de pagamento
-* Consulta de pagamentos realizados
+* Produto
+* Quantidade
+* Valor Total
 
-## Campos do Pagamento
+### Produtos Disponíveis
 
-* Método de pagamento
-* Valor
-* Identificador da transação
-
-## Métodos de Pagamento
-
-Exemplos:
-
-* Dinheiro
-* PIX
-* Cartão de Crédito
-* Cartão de Débito
-* Transferência Bancária
+* SSD
+* HD
+* Memória RAM
+* Fonte
+* Mouse
+* Teclado
+* Monitor
+* Placa de Rede
 
 ---
 
-# Objetivo Acadêmico
+# Estrutura do Projeto
 
-Este projeto foi desenvolvido para praticar conceitos estudados em sala de aula, incluindo:
+```text
+TechFix
+│
+├── index.html
+├── orcamentos.html
+├── vendas.html
+│
+├── assets
+│   ├── css
+│   │   └── style.css
+│   │
+│   └── js
+│       ├── dashboard.js
+│       ├── servicos.js
+│       └── vendas.js
+```
+
+---
+
+# Objetivos de Aprendizagem
+
+Durante o desenvolvimento do projeto foram aplicados os seguintes conceitos:
 
 * Estruturação de páginas HTML
 * Estilização com CSS
-* Manipulação do DOM
-* Eventos JavaScript
-* Consumo de APIs utilizando Fetch
+* Manipulação de elementos com JavaScript
+* Eventos de formulário
 * Operações CRUD
-* Organização de dados em tabelas
-* Integração entre front-end e APIs REST
+* Consumo de APIs utilizando Fetch
+* Manipulação de JSON
+* Organização de informações em tabelas
+* Integração entre páginas
+
+---
+
+# Demonstração do Sistema
+
+Fluxo principal da aplicação:
+
+1. Acessar o Dashboard.
+2. Visualizar os indicadores gerais.
+3. Cadastrar um orçamento.
+4. Editar informações do orçamento.
+5. Alterar o status do serviço.
+6. Finalizar um orçamento.
+7. Registrar vendas de produtos.
+8. Consultar os registros cadastrados.
 
 ---
 
 # Conclusão
 
-O sistema TechFix busca simular o funcionamento básico de uma assistência técnica, permitindo o controle de orçamentos e pagamentos de forma simples e organizada.
+O TechFix foi desenvolvido com o objetivo de simular o funcionamento básico de uma assistência técnica, permitindo o gerenciamento de orçamentos e vendas de forma simples, organizada e intuitiva.
 
-O projeto foi dividido em módulos para facilitar o desenvolvimento em equipe e aplicar os conhecimentos adquiridos durante a disciplina.
+O projeto possibilitou a aplicação prática dos conteúdos estudados em sala de aula, especialmente conceitos relacionados ao desenvolvimento web e integração com APIs.
