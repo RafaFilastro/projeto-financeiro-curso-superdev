@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TechFix</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TechFix</h1>
+      <p>Sistema de Assistência Técnica</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Orçamento</h2>
+
+        <form id="formOrcamento">
+          <label>Cliente</label>
+          <input type="text" id="cliente" required />
+
+          <label>Descrição</label>
+          <textarea id="descricao" required></textarea>
+
+          <label>Valor Estimado</label>
+          <input type="number" id="valorEstimado" required />
+
+          <label>Prazo em Dias</label>
+          <input type="number" id="prazoDias" required />
+
+          <label>Status</label>
+          <select id="status">
+            <option>Em análise</option>
+            <option>Aguardando aprovação</option>
+            <option>Aprovado</option>
+            <option>Finalizado</option>
+          </select>
+
+          <button id="btnSalvar" type="submit">Salvar Orçamento</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Orçamentos Cadastrados</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Prazo</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+
+          <tbody id="tabelaOrcamentos"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="assets/js/servicos.js"></script>
+  </body>
+</html>

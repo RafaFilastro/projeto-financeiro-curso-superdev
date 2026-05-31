@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+header {
+  background: #2563eb;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+textarea,
+select {
+  padding: 8px;
+  margin-top: 5px;
+}
+
+textarea {
+  height: 80px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+}
+
+#btnSalvar {
+  background: #16a34a;
+}
+
+.btn-editar {
+  background: #f59e0b;
+}
+
+.btn-excluir {
+  background: #dc2626;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #2563eb;
+  color: white;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.finalizado {
+  text-decoration: line-through;
+  color: #777;
+  background: #f0f0f0;
+}

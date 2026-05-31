@@ -2,272 +2,143 @@
 
 ## Descrição do Projeto
 
-O TechFix é um sistema web desenvolvido para gerenciar uma assistência técnica de computadores.
+O TechFix é um sistema web desenvolvido para auxiliar no gerenciamento de uma assistência técnica de computadores.
 
-O objetivo é controlar:
+O objetivo do sistema é permitir o cadastro e controle de orçamentos de serviços realizados pela empresa, além do gerenciamento dos pagamentos efetuados pelos clientes.
 
-- Ordens de serviço
-- Vendas de produtos
-- Histórico de atendimentos
-- Faturamento da empresa
-
-O projeto utilizará duas APIs:
-
-### Serviços
-
-```http
-https://api.franciscosensaulas.com/api/v1/trabalho/serviço
-```
-
-### Vendas
-
-```http
-https://api.franciscosensaulas.com/api/v1/trabalho/vendas
-```
+O projeto foi dividido em módulos, permitindo que cada integrante da equipe desenvolvesse uma parte específica do sistema.
 
 ---
 
-# Divisão da Equipe
+# Tecnologias Utilizadas
 
-## Integrante 1 - Módulo de Serviços
+* HTML
+* CSS
+* JavaScript
+* Fetch API
+* API REST
 
-Responsável por:
+---
 
-- Criar serviços
-- Listar serviços
-- Editar serviços
-- Excluir serviços
-- Filtrar serviços por status
+# Integrante 1 - Módulo de Orçamentos
 
-### Estrutura do Serviço
+Responsável pelo desenvolvimento do módulo de orçamentos.
+
+## API Utilizada
+
+```text
+https://api.franciscosensaulas.com/api/v1/trabalho/orcamentos-detalhados
+```
+
+## Estrutura da API
 
 ```json
-{
-  "cliente": "João Silva",
-  "telefone": "(47)99999-9999",
-  "equipamento": "Notebook Acer Nitro",
-  "problema": "Notebook não liga",
-  "tecnico": "Rafael",
-  "valorServico": 150,
-  "status": "Em análise",
-  "dataEntrada": "2026-05-29"
-}
+[
+  {
+    "id": 0,
+    "descricao": "string",
+    "valorEstimado": 0,
+    "prazoDias": 0,
+    "cliente": "string",
+    "status": "string"
+  }
+]
 ```
 
-### Status Possíveis
+## Funcionalidades Desenvolvidas
 
-- Em análise
-- Aguardando peça
-- Em manutenção
-- Finalizado
-- Cancelado
+* Cadastro de orçamento
+* Listagem de orçamentos
+* Edição de orçamento
+* Exclusão de orçamento
+* Atualização de status
+* Ordenação automática dos orçamentos
+* Destaque visual para orçamentos finalizados
+* Interface responsiva simples
+
+## Campos do Orçamento
+
+* Cliente
+* Descrição do serviço
+* Valor estimado
+* Prazo em dias
+* Status
+
+## Status Disponíveis
+
+* Em análise
+* Aguardando aprovação
+* Aprovado
+* Finalizado
 
 ---
 
-## Integrante 2 - Módulo de Vendas
+# Integrante 2 - Módulo de Pagamentos
 
-Responsável por:
+Responsável pelo desenvolvimento do módulo de pagamentos.
 
-- Criar vendas
-- Listar vendas
-- Editar vendas
-- Excluir vendas
-- Filtrar vendas
+## API Utilizada
 
-### Estrutura da Venda
+```text
+https://api.franciscosensaulas.com/api/v1/trabalho/pagamentos
+```
+
+## Estrutura da API
 
 ```json
-{
-  "cliente": "João Silva",
-  "produto": "SSD Kingston 480GB",
-  "quantidade": 1,
-  "valorUnitario": 220,
-  "formaPagamento": "Pix",
-  "status": "Pago"
-}
+[
+  {
+    "id": 0,
+    "metodoPagamento": "string",
+    "valor": 0,
+    "transacaoId": 0
+  }
+]
 ```
 
-### Produtos Utilizados no Projeto
+## Funcionalidades Esperadas
 
-- SSD
-- HD
-- Memória RAM
-- Fonte
-- Mouse
-- Teclado
-- Monitor
-- Placa de Rede
+* Cadastro de pagamento
+* Listagem de pagamentos
+* Edição de pagamento
+* Exclusão de pagamento
+* Consulta de pagamentos realizados
 
----
+## Campos do Pagamento
 
-# Funcionalidades
+* Método de pagamento
+* Valor
+* Identificador da transação
 
-## Dashboard
+## Métodos de Pagamento
 
-A tela inicial deverá apresentar indicadores da empresa.
+Exemplos:
 
-### Cards
-
-- Serviços em andamento
-- Serviços finalizados
-- Total de vendas
-- Faturamento geral
-
-Exemplo:
-
-```text
-Serviços em andamento: 5
-Serviços finalizados: 12
-Total de vendas: R$ 3.250
-Faturamento total: R$ 5.800
-```
-
----
-
-# Tela de Serviços
-
-## Cadastro
-
-Campos:
-
-- Nome do Cliente
-- Telefone
-- Equipamento
-- Problema Relatado
-- Técnico Responsável
-- Valor do Serviço
-- Status
-- Data de Entrada
-
-## Listagem
-
-Tabela contendo:
-
-| Cliente | Equipamento | Problema | Status |
-|----------|------------|-----------|---------|
-| João | Acer Nitro | Não liga | Em análise |
-| Carlos | Dell | Tela quebrada | Finalizado |
-
-## Edição
-
-Permitir alterar:
-
-- Status
-- Valor
-- Técnico responsável
-- Problema relatado
-
-## Exclusão
-
-Remover registros com confirmação.
-
----
-
-# Tela de Vendas
-
-## Cadastro
-
-Campos:
-
-- Cliente
-- Produto
-- Quantidade
-- Valor Unitário
-- Forma de Pagamento
-- Status
-
-## Listagem
-
-| Cliente | Produto | Valor |
-|----------|----------|--------|
-| João | SSD Kingston | R$220 |
-| Carlos | Mouse Gamer | R$89 |
-
-## Edição
-
-Permitir alterar:
-
-- Quantidade
-- Valor
-- Forma de pagamento
-- Status
-
-## Exclusão
-
-Remover vendas com confirmação.
-
----
-
-# Fluxo Real do Sistema
-
-Cliente leva um notebook para manutenção.
-
-### Serviço
-
-```text
-Cliente: João Silva
-Problema: Notebook lento
-Serviço: Formatação e instalação de SSD
-Valor: R$120
-```
-
-### Venda
-
-```text
-Produto: SSD Kingston 480GB
-Valor: R$220
-```
-
-### Resultado
-
-```text
-Serviço: R$120
-Produto: R$220
-Total: R$340
-```
-
----
-
-# Tecnologias Sugeridas
-
-## Front-end
-
-- HTML5
-- CSS3
-- JavaScript
-
-## Consumo de API
-
-- Fetch API
-
-## Versionamento
-
-- Git
-- GitHub
-
----
-
-# Funcionalidades Extras
-
-Para ganhar destaque na apresentação:
-
-- Pesquisa por cliente
-- Filtro por status
-- Dashboard com totais automáticos
-- Tema Dark/Light
-- Layout responsivo
-- Mensagens de sucesso e erro
-- Validação de formulários
+* Dinheiro
+* PIX
+* Cartão de Crédito
+* Cartão de Débito
+* Transferência Bancária
 
 ---
 
 # Objetivo Acadêmico
 
-Demonstrar o uso de:
+Este projeto foi desenvolvido para praticar conceitos estudados em sala de aula, incluindo:
 
-- CRUD completo
-- Consumo de API REST
-- Manipulação do DOM
-- Organização de código JavaScript
-- Trabalho em equipe
-- Integração entre módulos diferentes
+* Estruturação de páginas HTML
+* Estilização com CSS
+* Manipulação do DOM
+* Eventos JavaScript
+* Consumo de APIs utilizando Fetch
+* Operações CRUD
+* Organização de dados em tabelas
+* Integração entre front-end e APIs REST
+
+---
+
+# Conclusão
+
+O sistema TechFix busca simular o funcionamento básico de uma assistência técnica, permitindo o controle de orçamentos e pagamentos de forma simples e organizada.
+
+O projeto foi dividido em módulos para facilitar o desenvolvimento em equipe e aplicar os conhecimentos adquiridos durante a disciplina.
