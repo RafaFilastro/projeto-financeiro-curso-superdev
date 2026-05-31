@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+header {
+  background: #2563eb;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header nav {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 16px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+}
+
+header nav a.ativo,
+header nav a:hover {
+  background: rgba(255, 255, 255, 0.35);
+  font-weight: bold;
+}
+
+main {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.card-info {
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.card-info h3 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.card-info p {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.azul    { background: #2563eb; }
+.verde   { background: #16a34a; }
+.amarelo { background: #d97706; }
+.cinza   { background: #4b5563; }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+textarea,
+select {
+  padding: 8px;
+  margin-top: 5px;
+}
+
+textarea {
+  height: 80px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+}
+
+#btnSalvar {
+  background: #16a34a;
+}
+
+.btn-editar {
+  background: #f59e0b;
+}
+
+.btn-excluir {
+  background: #dc2626;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #2563eb;
+  color: white;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.finalizado {
+  text-decoration: line-through;
+  color: #777;
+  background: #f0f0f0;
+}
+
+@media (max-width: 700px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
